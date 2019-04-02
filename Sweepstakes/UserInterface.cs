@@ -42,16 +42,12 @@ namespace Sweepstakes
 
         public void DisplayContestantInfo(Contestant contestant)
         {
-            StringBuilder info = new StringBuilder();
-            info.AppendLine($"Name: {contestant.firstName} {contestant.lastName}");
-            info.AppendLine($"Email Address: {contestant.email}");
-            info.AppendLine($"Registration Number:{ contestant.regNumber}");
-            Console.WriteLine(info);
+            
         }
 
         public void PickWinnerDisplay(Contestant contestant)
         {
-            Console.WriteLine("Winner for this Sweepstake is: {0} {1}", contestant.firstName, contestant.lastName);
+            
         }
     }
 }

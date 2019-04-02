@@ -8,5 +8,17 @@ namespace Sweepstakes
 {
     class Contestant
     {
+        string firstName;
+        string lastName;
+        string email;
+        int registration;
+
+        public Contestant(string firstName, string lastName, string email, int registration)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.registration = registration;
+        }
     }
 }

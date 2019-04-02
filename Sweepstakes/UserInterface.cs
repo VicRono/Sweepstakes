@@ -10,16 +10,32 @@ namespace Sweepstakes
     {
         public int RegistrationNumber;
         Random rnd = new Random();
-
         public string AssignSweepstakesName()
         {
             Console.WriteLine("Please Enter the Sweepstakes name:");
             string name = Console.ReadLine();
             return name;
         }
+
+        public int NumberOfContestants()
+        {
+            try
+            {
+                Console.WriteLine("How many contestants will be playing Sweepstakes?");
+                int response = Int32.Parse(Console.ReadLine());
+                return response;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Not a Valid Input");
+                return NumberOfContestants();
+            }
+        }
+
         public void AssignFirstName(Contestant contestant)
         {
-            Console.WriteLine("Please enter your First Name");
+            Console.WriteLine("ENTRY NO. {0}", contestant.regNumber + 1);
+            Console.WriteLine("Please enter the First Name of the contestant.");
             contestant.firstName = Console.ReadLine();
         }
 
@@ -27,6 +43,17 @@ namespace Sweepstakes
         {
             Console.WriteLine("Please enter your First Name");
             contestant.lastName = Console.ReadLine();
+        }
+
+        public string ReRunSweepstakes()
+        {
+            Console.WriteLine("Do you want to run another Sweepstake?, Enter 'yes' or 'no");
+            return Console.ReadLine().ToLower().Trim();
+        }
+
+        public void CloseGame()
+        {
+            Console.WriteLine("Thank You for playing!.");
         }
 
         public void AssignEmail(Contestant contestant)

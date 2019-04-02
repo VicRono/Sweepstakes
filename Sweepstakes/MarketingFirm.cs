@@ -19,13 +19,13 @@ namespace Sweepstakes
          
         }
 
-        public void LaunchApp(string input)
+        public void StartSweepstakes(string input)
         {
             if (input.ToLower() == "yes")
             {
                 manager.InsertSweepstakes(sweepstakes);
                 RunSweepstakes();
-                LaunchApp(sweepstakes.UI.ReRunSweepstakes());
+                StartSweepstakes(sweepstakes.UI.ReRunSweepstakes());
             }
             else
             {

@@ -9,7 +9,7 @@ namespace Sweepstakes
     class Sweepstakes
     {
         
-        public Dictionary<int, Contestant> dictionary;
+        public Dictionary<int, Contestant> dictionary = new Dictionary<int, Contestant>();
         public UserInterface UI = new UserInterface();
         public Contestant contestant;
         public string name;
@@ -20,7 +20,7 @@ namespace Sweepstakes
         
         public Sweepstakes(string name)
         {
-            dictionary = new Dictionary<int, Contestant>();
+            contestant = new Contestant("Vic", "Rono", "vrono@test.com");
             this.name = name;
         }
 

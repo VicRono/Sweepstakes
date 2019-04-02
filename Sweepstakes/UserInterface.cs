@@ -41,24 +41,13 @@ namespace Sweepstakes
 
         public void AssingLastName(Contestant contestant)
         {
-            Console.WriteLine("Please enter your First Name");
+            Console.WriteLine("Please enter your Last Name");
             contestant.lastName = Console.ReadLine();
-        }
-
-        public string ReRunSweepstakes()
-        {
-            Console.WriteLine("Do you want to run another Sweepstake?, Enter 'yes' or 'no");
-            return Console.ReadLine().ToLower().Trim();
-        }
-
-        public void CloseGame()
-        {
-            Console.WriteLine("Thank You for playing!.");
         }
 
         public void AssignEmail(Contestant contestant)
         {
-            Console.WriteLine("Please enter your First Name");
+            Console.WriteLine("Please enter your Email:");
             contestant.email = Console.ReadLine();
         }
 
@@ -80,5 +69,17 @@ namespace Sweepstakes
         {
             Console.WriteLine("Winner for this Sweepstake is: {0} {1}", contestant.firstName, contestant.lastName);
         }
+
+        public void CloseGame()
+        {
+            Console.WriteLine("Thank You for playing!.");
+        }
+
+        public string ReRunSweepstakes()
+        {
+            Console.WriteLine("Do you want to run another Sweepstake?, Enter 'yes' or 'no");
+            return Console.ReadLine().ToLower().Trim();
+        }
+
     }
 }

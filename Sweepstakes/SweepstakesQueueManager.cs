@@ -10,14 +10,14 @@ namespace Sweepstakes
     {
         Queue<Sweepstakes> queueSweep = new Queue<Sweepstakes>();
 
-        public Sweepstakes GetSweepstake()
-        {
-            return queueSweep.Dequeue();
-        }
-
-        public void InsertSweepstake(Sweepstakes sweepstakes)
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             queueSweep.Enqueue(sweepstakes);
+        }
+
+        public Sweepstakes GetSweepstakes()
+        {
+            return queueSweep.Dequeue();
         }
     }
 }

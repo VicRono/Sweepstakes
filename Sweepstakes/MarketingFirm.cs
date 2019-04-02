@@ -10,14 +10,32 @@ namespace Sweepstakes
     {
         public Sweepstakes sweepstakes;
         public string sweepstakesName;
-        public ISweepstakesManager Manager;
+        public ISweepstakesManager manager;
 
         public MarketingFirm(ISweepstakesManager manager)
         {
-            this.Manager = manager;
+            this.manager = manager;
             sweepstakes = new Sweepstakes(sweepstakesName);
          
         }
+
+        public void LaunchApp(string input)
+        {
+            if (input.ToLower() == "yes")
+            {
+                manager.InsertSweepstakes(sweepstakes);
+                RunSweepstakes();
+                LaunchApp(sweepstakes.UI.ReRunSweepstakes());
+            }
+            else
+            {
+                
+                sweepstakes.PickWinner();
+                sweepstakes.UI.CloseGame();
+                return;
+            }
+        }
+
         public void RunSweepstakes()
         {
             CreateSweepstakes();
